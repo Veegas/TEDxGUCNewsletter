@@ -1,9 +1,9 @@
 {% macro team(title, image, body)%}
 <div class="team team__body slide" data-anchor="team-{{title}}">
   <div class="team__body__container">
-    <h2 class="team__body__title">
+    <h4 class="team__body__title">
       {{title}} Tribe
-    </h2>
+    </h4>
     <div class="team__body__image-container">
       <div class="team__body__image__wrapper">
         <img class="team__body__image" src="images/tedx/{{image}}" alt="{{title}} Team">
@@ -11,7 +11,7 @@
     </div>
     <div class="team__body__content-container">
       <h3 class="font_content flow-text">
-        {{body}}
+        {{body | safe}}
       </h3>
     </div>
   </div>
@@ -23,9 +23,11 @@
 {% macro internal(title, image, body)%}
 <div class="team team__body slide" data-anchor="{{title}}">
   <div class="team__body__container">
-    <h2 class="team__body__title">
+    {%if title%}
+    <h4 class="team__body__title">
       {{title}}
-    </h2>
+    </h4>
+    {% endif %}
     {% if image %}
     <div class="team__body__image-container">
       <div class="team__body__image__wrapper">
@@ -33,11 +35,40 @@
       </div>
     </div>
     {% endif %}
+    {% if body %}
     <div class="team__body__content-container">
       <h6 class="font_content flow-text">
         {{body | safe}}
       </h6>
     </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endmacro %}
+
+{% macro social(title, image, body)%}
+<div class="team team__body slide" data-anchor="{{title}}">
+  <div class="team__body__container">
+    {%if title%}
+    <h4 class="team__body__title">
+      {{title}}
+    </h4>
+    {% endif %}
+    {% if body %}
+    <div class="team__body__content-container">
+      <h6 class="font_content flow-text">
+        {{body | safe}}
+      </h6>
+    </div>
+    {% endif %}
+    {% if image %}
+    <div class="team__body__image-container team__body__image-container_full">
+      <div class="team__body__image__wrapper">
+        <img class="team__body__image" src="images/tedx/{{image}}" alt="{{title}}">
+      </div>
+    </div>
+    {% endif %}
   </div>
 </div>
 
