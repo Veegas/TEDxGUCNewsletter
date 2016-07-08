@@ -14,6 +14,7 @@ $(document).ready(() => {
   $('#fullpage').fullpage({
     verticalCentered: false,
     loopBottom: true,
+    scrollingSpeed: 400,
     afterRender: () => {
       renderStars();
     },
@@ -111,8 +112,10 @@ $(document).ready(() => {
 
 function renderStars() {
   let sections = $('.body');
+  let width = window.innerWidth;
+  let maxStars = Math.floor((width / 10));
   sections.each(function() {
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < maxStars; i++) {
       let top = Math.floor(Math.random() * 100);
       let left = Math.floor(Math.random() * 100);
       let delay = (i % 100) * 100;

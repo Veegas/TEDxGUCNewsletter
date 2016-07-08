@@ -179,11 +179,13 @@ em {
     }
     &__image {
       height: 100%;
+      max-width: 100%;
       &__wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
+        max-width: 100%;
         position: relative;
         &::before {
           content: " ";
