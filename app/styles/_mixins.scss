@@ -1,0 +1,104 @@
+@mixin section-background {
+  background-color: transparent;
+  height: 100vh;
+  width: 100%;
+}
+
+
+@mixin dash($top, $font-size) {
+  position: relative;
+  &::before {
+    content: "-";
+    position: absolute;
+    top: $top;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-size: $font-size;
+  }
+}
+
+@mixin star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(white, 0.9);
+  transform: scale(0.08) translateY(0px);
+  box-shadow: 0 0 65px $color-star-shadow;
+  backface-visibility: hidden;
+  animation: blinkAfter 15s infinite ease-out;
+  z-index: 0
+}
+
+
+@mixin planet-section-header($url, $position) {
+  background-image: url($url);
+  height: 45%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: $position;
+}
+
+
+@keyframes blinkAfter {
+ 0% {
+   transform: scale(0.08) translateY(0px);
+    background-color: $star-dim;
+
+ }
+ 4% {
+   transform: scale(0.9);
+   background-color: rgba(white, 0.9);
+ }
+ 8% {
+   transform: scale(0.08) ;
+   background-color: $star-dim;
+
+ }
+
+ 30% {
+   transform: scale(0.9);
+   background-color: rgba(white, 0.9);
+ }
+
+ 38% {
+   transform: scale(0.08);
+   background-color: $star-dim;
+ }
+
+
+ 50% {
+   transform: scale(0.08) translateY(20px);
+   background-color: $star-dim;
+
+ }
+ 52% {
+   transform: scale(0.3);
+   background-color: rgba(white, 0.9);
+ }
+ 54% {
+   transform: scale(0.08);
+   background-color: $star-dim;
+
+ }
+ 70% {
+   transform: scale(0.3);
+   background-color: rgba(white, 0.9);
+ }
+ 74% {
+   transform: scale(0.08) ;
+   background-color: $star-dim;
+
+ }
+ 92% {
+   transform: scale(0.3);
+   background-color: rgba(white, 0.9);
+ }
+ 100% {
+   transform: scale(0.08) translateY(40px);
+   background-color: $star-dim;
+
+ }
+
+}
