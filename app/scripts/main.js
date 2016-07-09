@@ -15,9 +15,6 @@ $(document).ready(() => {
     verticalCentered: false,
     loopBottom: true,
     scrollingSpeed: 400,
-    afterRender: () => {
-      renderStars();
-    },
     onLeave: function(index, nextIndex, direction) {
       let section = $(this);
       requestAnimFrame(function(){
@@ -110,28 +107,56 @@ $(document).ready(() => {
 });
 
 
+$(window).load(() => {
+  renderStars();
+})
+
 function renderStars() {
   let sections = $('.body');
   let width = window.innerWidth;
-  let maxStars = Math.floor((width / 10));
-  sections.each(function() {
-    for (let i = 0; i < maxStars; i++) {
-      let top = Math.floor(Math.random() * 100);
-      let left = Math.floor(Math.random() * 100);
-      let delay = (i % 100) * 100;
-      $(this).append(`<div class="star" style="top:${top}vh; left: ${left}vw; animation-delay:${delay}ms">`);
-    }
-  });
-}
+  let height = window.innerHeight;
 
-function removeStars() {
-  let active = $('.active');
-  console.log({
-    active
-  }, 'REMOVE ACTIVE');
-  active.each(function() {
-    $(this).remove('.star');
-  })
+  let slices = [{
+    width: 0,
+    height: 0
+  },{
+    width: 50,
+    height: 0
+  },{
+    width: 0,
+    height: 50
+  },{
+    width: 50,
+    height: 50
+  },]
+
+  let screens = {
+    small: 600,
+    medium: 992,
+    large: 1200
+  }
+  let maxStars = 0;
+  if (width > screens.medium) {
+    maxStars = 20;
+  } else if (width > screens.small) {
+    maxStars = 10;
+  } else if (width <= screens.small) {
+    maxStars = 5;
+  }
+
+  sections.each(function() {
+    slices.forEach( (slice) => {
+      for (let i = 0; i < maxStars; i++) {
+        let top = Math.floor(Math.random() * 50) + slice.height;
+        let left = Math.floor(Math.random() * 50) + slice.width;
+        let delay = i * 1000;
+        // let delay = 0;
+        $(this).append(`<div class="star" style="top:${top}vh; left: ${left}vw; animation-delay:${delay}ms">`);
+      }
+    })
+
+
+  });
 }
 
 function disableScroll() {

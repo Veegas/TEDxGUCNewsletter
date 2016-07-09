@@ -25,15 +25,11 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-666.09579,-455.21935)"
+     transform="translate(278.38067,-363.18608)"
      id="layer1">
-    <g
-       transform="matrix(1.25,0,0,-1.25,667.34579,533.74095)"
-       id="g176">
-      <path
-         id="path178"
-         style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         d="M 0,0 0,60.667 36,30.333 0,0 Z" />
-    </g>
+    <path
+       id="path174"
+       style="fill:none;stroke:#ffffff;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       d="m -231.44075,441.70768 0,-75.83375 -45,37.9175 45,37.91625 z" />
   </g>
 </svg>
