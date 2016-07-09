@@ -137,11 +137,11 @@ function renderStars() {
   }
   let maxStars = 0;
   if (width > screens.medium) {
-    maxStars = 20;
+    maxStars = 30;
   } else if (width > screens.small) {
-    maxStars = 10;
+    maxStars = 15;
   } else if (width <= screens.small) {
-    maxStars = 5;
+    maxStars = 10;
   }
 
   sections.each(function() {
