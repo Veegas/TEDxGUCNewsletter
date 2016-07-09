@@ -15,6 +15,9 @@ $(document).ready(() => {
     verticalCentered: false,
     loopBottom: true,
     scrollingSpeed: 400,
+    afterRender: () => {
+      renderStars();
+    },
     onLeave: function(index, nextIndex, direction) {
       let section = $(this);
       requestAnimFrame(function(){
@@ -107,9 +110,6 @@ $(document).ready(() => {
 });
 
 
-$(window).load(() => {
-  renderStars();
-})
 
 function renderStars() {
   let sections = $('.body');
