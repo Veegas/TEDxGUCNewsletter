@@ -5,6 +5,9 @@ const browserSync = require('browser-sync');
 const del = require('del');
 const wiredep = require('wiredep').stream;
 
+const ghPages = require('gulp-gh-pages');
+
+
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
@@ -159,6 +162,12 @@ gulp.task('serve:test', ['scripts'], () => {
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('test/spec/**/*.js').on('change', reload);
   gulp.watch('test/spec/**/*.js', ['lint:test']);
+});
+
+
+gulp.task('deploy', () => {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
 
 // inject bower components
