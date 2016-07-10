@@ -13,17 +13,25 @@ $(document).ready(() => {
   let menu = false;
   $('#fullpage').fullpage({
     verticalCentered: false,
-    loopBottom: true,
-    scrollingSpeed: 400,
+    loopBottom: false,
+    scrollingSpeed: 450,
+    animateAnchor: false,
+    easing: 'linear',
+    slidesNavigation: true,
     afterRender: () => {
       renderStars();
     },
     onLeave: function(index, nextIndex, direction) {
       let section = $(this);
+
+      if (direction == 'down' && !moving) {
+        if(index >= 4 && menu) {
+            return false;
+        }
+      }
+
       requestAnimFrame(function(){
-
         console.log({index, direction, moving, menu});
-
         if (direction == 'down' && !moving) {
 
           if (index == 3) {
@@ -54,10 +62,7 @@ $(document).ready(() => {
               $.fn.fullpage.moveTo(9, 0);
             }
           }
-        if(index >= 4 && menu) {
-          moving = true;
-          $.fn.fullpage.moveTo('menu', 0);
-        }
+
       }
 
       if (direction == 'up' && !moving) {

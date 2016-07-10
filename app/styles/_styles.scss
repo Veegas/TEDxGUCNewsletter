@@ -20,6 +20,7 @@ html {
   }
 }
 
+/* FULL PAGE.js OVERRIDES*/
 .fp-controlArrow.fp-prev {
   width: 10%;
   height: 10%;
@@ -37,6 +38,10 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   border: 0;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background-color: #FF2B06;
 }
 
 strong {
@@ -69,6 +74,7 @@ em {
   &_content {
     font-weight: 300;
     text-align: justify;
+    font-size: 1.3rem;
     @media (max-width: $small-screen) {
       font-size: 0.7em;
     }
