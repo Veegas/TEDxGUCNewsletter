@@ -27,7 +27,7 @@
   transform: scale(0.08) translateY(0px);
   box-shadow: 0 0 65px $color-star-shadow;
   backface-visibility: hidden;
-  animation: blinkAfter 15s infinite ease-out;
+  animation: blinkAfter 30s infinite ease-out;
   z-index: 0
 }
 

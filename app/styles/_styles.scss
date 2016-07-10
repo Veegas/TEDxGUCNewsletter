@@ -20,6 +20,7 @@ html {
   }
 }
 
+
 /* FULL PAGE.js OVERRIDES*/
 .fp-controlArrow.fp-prev {
   width: 10%;
@@ -70,6 +71,9 @@ em {
   &_subtitle {
     font-weight: 300;
     text-align: center;
+    @media (max-width: $small-screen) {
+      font-size: 1rem;
+    }
   }
   &_header {
     font-weight: 400;
@@ -120,6 +124,7 @@ em {
   &__planet {
     height: 100%;
     position: relative;
+    transition: background-color 0.3s ease;
     @media (max-width: $medium-screen) {
       height: 50%;
     }
@@ -188,6 +193,9 @@ em {
       @extend .font_title;
       @include dash(-1.5em, 1.5em);
       margin-top: 1.5em;
+      @media (max-width: $small-screen) {
+        font-size: 1.3rem;
+      }
     }
   }
   &__body {
@@ -222,6 +230,10 @@ em {
     &__image {
       height: 100%;
       max-width: 100%;
+      @media (max-width: $small-screen) {
+        height: auto;
+        max-height: 100%;
+      }
       &__wrapper {
         display: flex;
         align-items: center;

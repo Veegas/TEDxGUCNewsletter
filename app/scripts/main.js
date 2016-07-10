@@ -142,7 +142,7 @@ function renderStars() {
   }
   let maxStars = 0;
   if (width > screens.medium) {
-    maxStars = 30;
+    maxStars = 20;
   } else if (width > screens.small) {
     maxStars = 15;
   } else if (width <= screens.small) {
@@ -155,7 +155,6 @@ function renderStars() {
         let top = Math.floor(Math.random() * 50) + slice.height;
         let left = Math.floor(Math.random() * 50) + slice.width;
         let delay = i * 1000;
-        // let delay = 0;
         $(this).append(`<div class="star" style="top:${top}vh; left: ${left}vw; animation-delay:${delay}ms">`);
       }
     })
