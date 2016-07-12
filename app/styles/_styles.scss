@@ -71,6 +71,7 @@ em {
   &_subtitle {
     font-weight: 300;
     text-align: center;
+    font-size: 1.3rem;
     @media (max-width: $small-screen) {
       font-size: 1rem;
     }
@@ -82,7 +83,7 @@ em {
   &_content {
     font-weight: 300;
     text-align: justify;
-    font-size: 1.2rem;
+    font-size: 1rem;
     @media (max-width: $small-screen) {
       font-size: 0.7em;
     }
