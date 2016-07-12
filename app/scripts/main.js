@@ -112,6 +112,23 @@ $(document).ready(() => {
 
 
 
+  let audio = $('#background-sound');
+  let audioButtons = $('.audio-btn');
+  let audioButtonMute = $('.audio-btn.mute');
+  let audioButtonPlay = $('.audio-btn.play');
+
+  audioButtons.on('click', (ev) => {
+    if (!audio[0].muted) {
+      audioButtonPlay.addClass('audio-active');
+      audioButtonMute.removeClass('audio-active');
+    } else {
+      audioButtonPlay.removeClass('audio-active');
+      audioButtonMute.addClass('audio-active');
+    }
+    audio[0].muted = !audio[0].muted;
+  })
+
+
 });
 
 

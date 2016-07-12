@@ -4,10 +4,10 @@
   "dependencies": {
     "modernizr": "~2.8.1",
     "fullpage.js": "^2.8.1",
-    "Materialize": "materialize#^0.97.6"
+    "Materialize": "materialize#^0.97.6",
+    "font-awesome": "^4.6.3"
   },
-  "overrides": {
-  },
+  "overrides": {},
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3"

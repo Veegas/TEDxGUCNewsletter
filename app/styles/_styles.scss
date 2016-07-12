@@ -96,6 +96,19 @@ em {
     font-size: 50%;
   }
 }
+
+.audio-btn {
+  position: absolute;
+  top: 2.5vh;
+  left: 2vw;
+  color: white;
+  cursor: pointer;
+  z-index: 5;
+  display: none;
+}
+.audio-active {
+  display: block;
+}
 .home {
   @include section-background;
   padding: 10% 7.5%;
