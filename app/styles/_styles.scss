@@ -13,13 +13,32 @@ html {
   background-repeat: repeat-y, repeat-y;
   color: $color-white;
   position: relative;
+  visibility: hidden;
 
+  &.loaded {
+    visibility: visible;
+  }
   &__wrapper {
     position: relative;
     z-index: 1;
   }
 }
 
+.loading {
+  &.load_transition {
+    .loading__logo {
+      transition: all 3s;
+      top: 10% !important;
+    }
+    .loading__text {
+      transition: all 0.1s;
+      opacity: 0;
+    }
+  }
+  &.loaded {
+    display: none;
+  }
+}
 
 /* FULL PAGE.js OVERRIDES*/
 .fp-controlArrow.fp-prev {
@@ -83,7 +102,7 @@ em {
   &_content {
     font-weight: 300;
     text-align: justify;
-    font-size: 0.9rem;
+    font-size: 1rem;
     @media (max-width: $small-screen) {
       font-size: 0.7em;
     }

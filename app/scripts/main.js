@@ -8,7 +8,34 @@ window.requestAnimFrame = function(){
 }();
 
 
+$(window).load( () => {
+  $('.loading').addClass('load_transition');
+  $('.loading__logo').on('transitionend', (ev) => {
+    $('.body').addClass('loaded');
+    $('.loading').addClass('loaded');
+  })
+})
+
 $(document).ready(() => {
+  initializeFullPage();
+  let audio = $('#background-sound');
+  let audioButtons = $('.audio-btn');
+  let audioButtonMute = $('.audio-btn.mute');
+  let audioButtonPlay = $('.audio-btn.play');
+
+  audioButtons.on('click', (ev) => {
+    if (!audio[0].muted) {
+      audioButtonPlay.addClass('audio-active');
+      audioButtonMute.removeClass('audio-active');
+    } else {
+      audioButtonPlay.removeClass('audio-active');
+      audioButtonMute.addClass('audio-active');
+    }
+    audio[0].muted = !audio[0].muted;
+  })
+});
+
+function initializeFullPage() {
   let moving = false;
   let menu = false;
   $('#fullpage').fullpage({
@@ -109,29 +136,7 @@ $(document).ready(() => {
       }
     }
   });
-
-
-
-  let audio = $('#background-sound');
-  let audioButtons = $('.audio-btn');
-  let audioButtonMute = $('.audio-btn.mute');
-  let audioButtonPlay = $('.audio-btn.play');
-
-  audioButtons.on('click', (ev) => {
-    if (!audio[0].muted) {
-      audioButtonPlay.addClass('audio-active');
-      audioButtonMute.removeClass('audio-active');
-    } else {
-      audioButtonPlay.removeClass('audio-active');
-      audioButtonMute.addClass('audio-active');
-    }
-    audio[0].muted = !audio[0].muted;
-  })
-
-
-});
-
-
+}
 
 function renderStars() {
   let sections = $('.body');
