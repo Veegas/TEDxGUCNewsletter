@@ -41,7 +41,7 @@ function initializeFullPage() {
   $('#fullpage').fullpage({
     verticalCentered: false,
     loopBottom: false,
-    scrollingSpeed: 450,
+    scrollingSpeed: 1000,
     animateAnchor: false,
     easing: 'linear',
     slidesNavigation: true,
